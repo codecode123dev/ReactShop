@@ -1,0 +1,22 @@
+export const Icons = {
+    accessories: require('./icons/Accessories.png'),
+    accessories2: require('./icons/Accessories2.png'),
+    appliances: require('./icons/Appliances.png'),
+    audio: require('./icons/Audio.png'),
+    compare: require('./icons/compare.png'),
+    computer: require('./icons/Computers.png'),
+    constructor: require('./icons/Constructor.png'),
+    controls: require('./icons/Controls.png'),
+    digital_watch: require('./icons/DigitalWatch.png'),
+    dot: require('./icons//dot.png'),
+    equipment: require('./icons/Equipment.png'),
+    laptops: require('./icons/Laptops.png'),
+    new_tablets: require('./icons/NewTabletsSamsung.png'),
+    price_drop: require('./icons/Price_drop.png'),
+    smartPhone: require('./icons/Smartphones.png'),
+    speakers: require('./icons/Speakers.png'),
+    tablets: require('./icons/Tablets.png'),
+    television_set: require('./icons/TelevisionSet.png'),
+    the_new_watch: require('./icons/theNewWatch.png'),
+    video_games: require('./icons/VideoGames.png')
+}
