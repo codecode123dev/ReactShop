@@ -854,13 +854,13 @@ div>.background-color-img-icons {
 .fa-user {
     font-size: 2rem;
     margin-right: 20px;
-    padding: 6px;
+    padding: 5px;
     color: #C3CAD9;
 }
 
 .fa-shopping-cart {
     font-size: 2rem;
-    padding: 8px;
+    padding: 5px;
     color: #C3CAD9;
 }
 
@@ -1242,6 +1242,7 @@ div .content-dropdown-four {
     color: #6B7A99;
     font-weight: 700;
     text-decoration: none;
+    padding-top: 4px;
 }
 
 .icon-shopping-cart {
@@ -1254,6 +1255,7 @@ div .content-dropdown-four {
     font-size: 1.4rem;
     color: #6B7A99;
     font-weight: 700;
+    padding-top: 4px;
 }
 
 .page-content {
@@ -1563,12 +1565,10 @@ img.img-constructor {
 
 .right-icons .account {
     cursor: pointer;
-    padding-bottom: 6px;
 }
 
 .right-icons .cart-icons {
     cursor: pointer;
-    padding-bottom: 6px;
 }
 
 

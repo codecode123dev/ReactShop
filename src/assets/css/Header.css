@@ -1,0 +1,28 @@
+.content-item-first {
+    background:#F8F9FA;
+    border: #F8F9FA;
+}
+.content-item-first:focus{
+    border: #F8F9FA;
+}
+.content-item-first:hover{
+    background-color: #F8F9FA;
+}
+.content-item-first:active{
+    background-color: #F8F9FA;
+}
+
+div .content-dropdown-third {
+    line-height: 38px;
+}
+
+div .content-dropdown-four {
+    line-height: 38px;
+}
+a.account-item {
+    display: flex;
+}
+
+a.cart-item {
+    display: flex;
+}

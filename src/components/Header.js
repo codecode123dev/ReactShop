@@ -1,24 +1,76 @@
 import React, { useState } from "react";
 import Image from "../assets/index";
 import { Icons } from "../assets/icons";
-export function Header() {
+import Dropdown from 'react-bootstrap/Dropdown';
+import '../assets/css/Header.css';
 
 
-    let url = '#';
-    const href = [
-        { url: '#', title: 'Action' },
-        { url: '#', title: 'Another action' },
-        { url: '#', title: 'Something else here' },
+// function DropItem() {
+
+//     const items = [
+//         {id: 1, itemContent: 'Today’s Deals', url: '#', dropDownContent: ['Action','Another action', 'Something else here']},
+//         {id: 2,itemContent: 'Best\'s Sellers', url: '#', dropDownContent: ['Action','Another action', 'Something else here']}
+//     ];
+//     return(
+//         <div>
+//             {items.map((item,index) => {
+//                 return(
+//                     <div key={index}>
+//                         <div className="content-dropdown " data-toggle="dropdown">
+//                             <p>{item.itemContent}</p>
+//                             <i className="fa fa-chevron-down" aria-hidden="true"></i>
+//                         </div>
+//                         {items.dropDownContent.map((dropItem,index) => {
+//                             return(
+//                                 <div key={index}>
+//                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+//                                         <a className="dropdown-item" href={item.url}>{dropItem.dropDownContent}</a>
+//                                     </div>
+//                                 </div>
+//                             )
+//                         })}
+//                     </div>
+//                 )
+//             })}
+//         </div>
+
+//     )
+// }
+
+function Test() {
+    const items = [
+        { id: 1, name: 'Today’s Deals', dropdownContent: ['Action', 'Another action', 'Something else here'] },
+        { id: 2, name: 'Best’s Sellers', dropdownContent: ['Action', 'Another action', 'Something else here']  }
     ];
 
-    const detailsItem = href.map((item,index) => {
-        {}
+    return (
+        <div className="dropdown ">
+            {items.map((item, index) => {
+                return (
+                    <Dropdown  key={index}>
+                        <Dropdown.Toggle   className="content-dropdown content-item-first" data-toggle="dropdown"  aria-haspopup="true">
+                            <p>{item.name}</p>
+                            <i className="fa fa-chevron-down" aria-hidden="true"></i>
+                        </Dropdown.Toggle>
 
-    });
-    
+                        <Dropdown.Menu key={index} className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {item.dropdownContent.map((content, index) => {
+                            return (
+                                <Dropdown.Item key={index} className="dropdown-item">{content}</Dropdown.Item>
+                                );
+                            })}
+                        </Dropdown.Menu>
+
+                    </Dropdown>
+                );
+            })}
+        </div>
+    );
+}
 
 
-
+export function Header() {
+    let url = '#';
 
     return (
         <>
@@ -27,37 +79,12 @@ export function Header() {
                     <div class="nav-brand">
                         <i class="fa fa-bars header-bars-icons" aria-hidden="true"></i>
                         <a href={url}>
-                            <img class="img-constructor" src={Image.apple_mac} alt="constructor" />
+                            <img class="img-constructor" src={Icons.constructor} alt="constructor" />
                         </a>
                     </div>
                     <div className="wrap-nav-content" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                            <div className="dropdown content-item-first">
-                                <div className="content-dropdown " data-toggle="dropdown">
-                                    <p>Today’s Deals</p>
-                                    <i className="fa fa-chevron-down" aria-hidden="true"></i>
-                                </div>
-
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-
-
-                                    <a className="dropdown-item" href={url}>Action</a>
-                                    <a className="dropdown-item" href={url}>Another action</a>
-                                    <a className="dropdown-item" href={url}>Something else here</a>
-                                </div>
-                            </div>
-                            <div className="dropdown content-item-second">
-                                <div className="content-dropdown" data-toggle="dropdown" aria-haspopup="true">
-                                    <p>Best's Sellers</p>
-                                    <i className="fa fa-chevron-down" aria-hidden="true"></i>
-                                </div>
-                                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a className="dropdown-item" href={url}>Action</a>
-                                    <a className="dropdown-item" href={url}>Another action</a>
-                                    <a className="dropdown-item" href={url}>Something else here</a>
-                                </div>
-                            </div>
-
+                                <Test/>
                             <div>
                                 <a className="content-dropdown-third" href={url}>Customer Service</a>
                             </div>
