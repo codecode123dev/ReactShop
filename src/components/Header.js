@@ -5,37 +5,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import '../assets/css/Header.css';
 
 
-// function DropItem() {
-
-//     const items = [
-//         {id: 1, itemContent: 'Today’s Deals', url: '#', dropDownContent: ['Action','Another action', 'Something else here']},
-//         {id: 2,itemContent: 'Best\'s Sellers', url: '#', dropDownContent: ['Action','Another action', 'Something else here']}
-//     ];
-//     return(
-//         <div>
-//             {items.map((item,index) => {
-//                 return(
-//                     <div key={index}>
-//                         <div className="content-dropdown " data-toggle="dropdown">
-//                             <p>{item.itemContent}</p>
-//                             <i className="fa fa-chevron-down" aria-hidden="true"></i>
-//                         </div>
-//                         {items.dropDownContent.map((dropItem,index) => {
-//                             return(
-//                                 <div key={index}>
-//                                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-//                                         <a className="dropdown-item" href={item.url}>{dropItem.dropDownContent}</a>
-//                                     </div>
-//                                 </div>
-//                             )
-//                         })}
-//                     </div>
-//                 )
-//             })}
-//         </div>
-
-//     )
-// }
 
 function Test() {
     const items = [

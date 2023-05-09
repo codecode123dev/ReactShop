@@ -18,5 +18,6 @@ export const Icons = {
     tablets: require('./icons/Tablets.png'),
     television_set: require('./icons/TelevisionSet.png'),
     the_new_watch: require('./icons/theNewWatch.png'),
-    video_games: require('./icons/VideoGames.png')
+    video_games: require('./icons/VideoGames.png'),
+    icon_info: require('./icons/Icon_info.png')
 }

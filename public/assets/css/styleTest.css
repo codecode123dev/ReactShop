@@ -31,6 +31,10 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--base-color);
 }
+.roboto {
+	font-family: 'Roboto', sans-serif;
+}
+
 
 .row-product-items .product-items {
     padding-top: 50px ;
@@ -51,7 +55,6 @@ body {
 .background-color-img-icons {
     max-width: 24px;
     margin-bottom: 4px;
-    margin-right: 26px;
 }
 
 /* @media (min-width: 900px) { */
@@ -195,7 +198,6 @@ div .nav-content {
 .icons-img {
     display: flex;
     align-items: center;
-    padding-bottom: 5px;
     gap: 20px;
     background-color: #ffffff;
 }
@@ -250,7 +252,7 @@ div.icons-size {
     font-style: normal;
     font-weight: 700;
     color: #6B7A99;
-    margin-bottom: 40px;
+    margin-bottom: 8px;
 }
 .title-product-img-tablet {
     margin-top: 40px;
@@ -298,8 +300,9 @@ div.icons-size {
     flex-direction: column;
     /* border: solid 1px red; */
     padding: 0;
+    padding-right: 34px;
     gap: 50px;
-    padding-bottom: 85px;
+    padding-bottom: 70px;
 }
 
 .breadcrumb {
@@ -529,12 +532,7 @@ div>#new {
     border-bottom: 2px solid #EDEFF2;
 }
 
-.checkbox-left-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 
-}
 
 .detail-option-brand {
     display: flex;
@@ -572,7 +570,7 @@ div>#new {
 .detail-option-memory {
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    padding: 8px;
     gap: 20px;
     justify-content: space-between;
 
@@ -585,12 +583,12 @@ div>#new {
     gap: 22px
 }
 
-.checkbox-left-memory {
+/* .checkbox-left-memory {
     display: flex;
     flex-direction: column;
     gap: 25px;
     font-size: 2rem;
-}
+} */
 
 /* end Memory */
 
@@ -690,7 +688,7 @@ div>.background-color-img-icons {
 }
 
 .option-product-detail-price {
-    height: 200px;
+    height: 180px;
     border: 2px solid #EDEFF2;
     border-radius: 10px;
     position: relative;
@@ -740,12 +738,11 @@ div>.background-color-img-icons {
 }
 
 .row-color-one {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-between;
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* width: 100%; */
+    /* justify-content: space-between; */
     font-size: 1rem;
-
 }
 
 .row-color-two {
@@ -791,7 +788,7 @@ div>.background-color-img-icons {
     display: flex;
     flex-direction: column;
     overflow: auto;
-    padding: 0 19px;
+    padding: 0px 10px;
     height: 146px;
     margin: 0 9px;
     /* margin: 0 42px; */
@@ -875,7 +872,7 @@ div>.background-color-img-icons {
     display: flex;
     flex-direction: column;
     overflow: auto;
-    padding: 0 19px;
+    padding: 0px 10px;
     height: 146px;
     margin: 0 9px;
     /* margin: 0 42px; */
@@ -1130,7 +1127,6 @@ div>.background-color-img-icons {
     background-color: #fff;
     font-size: 1.2rem;
     margin: 0;
-    width: 82px;
     /* width: 51px; */
     height: 20px;
     margin-right: 38px;
@@ -1270,7 +1266,7 @@ div .content-dropdown-four {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 0 0 44px;
+    padding: 0 0 0 36px;
     gap: 30px;
 }
 
@@ -1347,6 +1343,7 @@ img.img-constructor {
 .product-main-content {
     /* border: solid 1px red;   */
     margin: 0;
+    padding-right: 16px;
 }
 
 .product-main-content .detail-product-main-content {
@@ -1380,7 +1377,8 @@ img.img-constructor {
 .option-product {
     /* border: solid 1px rgb(17, 255, 0);  */
     margin: 0;
-    padding: 0;
+    padding: 0px 10px;
+    margin-top: 14px;
 }
 
 .font-size-5rem {
@@ -1523,7 +1521,7 @@ img.img-constructor {
     position: relative;
     cursor: pointer;
     width: 200px;
-    padding-left: 5px;
+    /* padding-left: 5px; */
 
 }
 
@@ -1628,6 +1626,15 @@ img.img-constructor {
 }
 .footer .address-information .address-items-first:hover {
     color: #ADB8CC;
+}
+.icon-title{
+    color: #6B7A99;
+}
+.background-color-icons{
+    color: #C3CAD9;
+}
+.dropdown-toggle::after{
+    display: none;
 }
 
 /* 1024px - 1150px */
@@ -4063,10 +4070,6 @@ img.img-constructor {
         cursor: pointer;
     }
 
-    .product-items-content .product-main-img {
-        width: 82%;
-        /* height: 100px; */
-    }
 
     .detail-product-main-content .row-product-items {
         padding: 0;
@@ -4254,6 +4257,9 @@ img.img-constructor {
     }
     .row {
         --bs-gutter-x: unset;
+    }
+    .product-items{
+        gap: 25px;
     }
     .information-detail-fourth {
         padding: 0;
