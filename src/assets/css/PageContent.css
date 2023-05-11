@@ -47,3 +47,9 @@ a.cart-item {
 /* label.icon-info-circle {
     width: 13px;
 } */
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    color: var(--bs-btn-active-color);
+    background-color: unset;
+    border-color: var(--bs-btn-active-border-color);
+}
+

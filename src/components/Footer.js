@@ -4,7 +4,7 @@ import { Icons } from "../assets/icons";
 
 
 
-export function Footer() {
+export default function Footer() {
     let url = '#';
     const contentFooterFirst = [
         {name: 'Corporate sales'},

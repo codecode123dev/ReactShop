@@ -3,10 +3,12 @@ import Image from "../assets/index";
 import { Icons } from "../assets/icons";
 import Dropdown from 'react-bootstrap/Dropdown';
 import '../assets/css/Header.css';
+import { FilteredList } from "./FilteredList";
 
 
 
 function Test() {
+    const url="#";
     const items = [
         { id: 1, name: 'Today’s Deals', dropdownContent: ['Action', 'Another action', 'Something else here'] },
         { id: 2, name: 'Best’s Sellers', dropdownContent: ['Action', 'Another action', 'Something else here']  }
@@ -16,21 +18,21 @@ function Test() {
         <div className="dropdown ">
             {items.map((item, index) => {
                 return (
-                    <Dropdown  key={index}>
-                        <Dropdown.Toggle   className="content-dropdown content-item-first" data-toggle="dropdown"  aria-haspopup="true">
+                    <div  key={index} className="dropdown content-item-first">
+                        <div   class="content-dropdown " data-toggle="dropdown"  aria-haspopup="true">
                             <p>{item.name}</p>
                             <i className="fa fa-chevron-down" aria-hidden="true"></i>
-                        </Dropdown.Toggle>
+                        </div>
 
-                        <Dropdown.Menu key={index} className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div key={index} className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {item.dropdownContent.map((content, index) => {
                             return (
-                                <Dropdown.Item key={index} className="dropdown-item">{content}</Dropdown.Item>
+                                <a key={index} href={url} className="dropdown-item">{content}</a>
                                 );
                             })}
-                        </Dropdown.Menu>
+                        </div>
 
-                    </Dropdown>
+                    </div>
                 );
             })}
         </div>
@@ -38,8 +40,28 @@ function Test() {
 }
 
 
-export function Header() {
+export default function Header(props) {
     let url = '#';
+    const itemProduct = [
+        { category: 'LAPTOPS', img: require('../assets/img/Apple_Mac.png'), name: 'Apple Mac Book Pro', price: '950.00',brand:'Apple', memory:'16 Gb'  },
+        { category: 'TABLETS', img: require('../assets/img/IPad_Pro.png'), name: 'iPad Pro 11', price: '950.00',brand:'Apple', memory:'256 Gb'  },
+        { category: 'COMPUTERS', img: require('../assets/img/Samsung_Qled.png'), name: 'Samsung Qled 4K', price: '950.00',brand:'Samsung', memory:'8Gb' },
+        { category: 'PHONES', img: require('../assets/img/Samsung_galaxy_s10.png'), name: 'Samsung Galaxy s10', price: '950.00',brand:'Samsung', memory:'64 Gb' },
+        { category: 'TABLETS', img: require('../assets/img/IpadPro11.png'), name: 'iPad Pro 11', price: '950.00',brand:'Apple', memory:'32 Gb' },
+        { category: 'COMPUTERS', img: require('../assets/img/loudspeaker.png'), name: 'Samsung Qled 4K', price: '950.00',brand:'Samsung', memory:'8Gb' },
+        { category: 'TABLETS', img: require('../assets/img/Microsoft_surface.png'), name: 'Microsoft Surface Studio', price: '950.00',brand:'Apple', memory:'128 Gb' },
+        { category: 'WATCHES', img: require('../assets/img/Samsung_watch.png'), name: 'Samsung Watch', price: '950.00',brand:'Samsung', memory:'8Gb' },
+        { category: 'COMPUTERS', img: require('../assets/img/ProDisplayXDR.png'), name: 'Pro Display XDR', price: '950.00',brand:'Apple', memory:'64 Gb' },
+        { category: 'BLACK FRIDAY', img: require('../assets/img/Gamepad_Xbox_one.png'), name: 'Gamepad Xbox One X', price: '950.00',brand:'Apple', memory:'32 Gb' },
+        { category: 'WATCHES', img: require('../assets/img/Smart_watch.png'), name: 'Smart Watch', price: '950.00',brand:'Apple' , memory:'32 Gb'},
+        { category: 'GADGET', img: require('../assets/img/GoogleNest.png'), name: 'Google Nest', price: '950.00',brand:'Apple' , memory:'16 Gb'},
+        { category: 'WATCHES', img: require('../assets/img/laptopSmart.png'), name: 'Smart Watch', price: '950.00',brand:'Apple' , memory:'32 Gb'},
+        { category: 'WATCHES', img: require('../assets/img/SmartWatchPink.png'), name: 'Apple Watch', price: '950.00',brand:'Apple', memory:'128 Gb' },
+        { category: 'GADGET', img: require('../assets/img/ApplePhone.png'), name: 'Apple iPod', price: '950.00',brand:'Apple', memory:'128 Gb' }
+    ];
+
+    const [filterList, setFilterList] = useState(itemProduct);
+
 
     return (
         <>
@@ -62,14 +84,11 @@ export function Header() {
                             </div>
                         </div>
                     </div>
-
-
                     <div className="icons-header-show">
                         <div className="search">
                             <i className="fa fa-search" aria-hidden="true"></i>
-                            <input className="search-heading " placeholder="Search Goods ..."></input>
+                            <input className="search-heading " placeholder="Search Goods ..." value={props.search} onChange={props.onChange}></input>
                         </div>
-
                         <div className="right-icons ">
                             <div className="account">
                                 <a href={url} className="account-item">
@@ -84,13 +103,8 @@ export function Header() {
                                 </a>
                             </div>
                         </div>
-
                     </div>
-
                 </nav>
-
-
-
             </header>
         </>
     )
