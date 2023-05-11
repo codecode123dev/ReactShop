@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 
-//lấy từ cha chuyền vào 
+
 export function FilteredList(props){
     const url = '#';
     return(

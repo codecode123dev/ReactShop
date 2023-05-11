@@ -2,6 +2,8 @@ import React,{useEffect, useState} from "react";
 import Header from "../components/Header";
 import PageContent from "../components/PageContent";
 import Footer from "../components/Footer";
+import queryString from "query-string";
+
 
 export const itemProduct = [
     { category: 'LAPTOPS', img: require('../assets/img/Apple_Mac.png'), name: 'Apple Mac Book Pro', price: '950.00',brand:'Apple', memory:'16 Gb'  },
@@ -25,22 +27,28 @@ export const itemProduct = [
 export default function HomePage(){
     const [filteredList, setFilteredList] = useState(itemProduct);
     const [selectedBrand, setSelectedBrand] = useState([]);
+    // const useStateMemory =  useState([]);
+    // const selectedMemory = useStateMemory[0]
+    // const setSelectedMemory = useStateMemory[0]
     const [selectedMemory, setSelectedMemory] = useState([]);
 
-    const[search, setSearch] = useState("")
+    const[search, setSearch] = useState("");
+
+    const changeRoute = (nameCategory,newSelected) =>{
+        const url = new URL(window.location);
+        url.searchParams.set(nameCategory, newSelected.toString());
+        window.history.pushState({}, "", url);
+    }
+
     const handleSearch = (event) =>{
         const text = event.target.value
         setSearch(text)
+        changeRoute("search",text)
+
     }
 
     const handleChangeData = (brands, memories, searchText) =>{
-        console.log(itemProduct.filter(item =>{
-            return(
-                (searchText && item.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1) &&
-                (memories.length && memories.includes(item.memory)) &&
-                (brands.length && brands.includes(item.brand))
-            )
-        }));
+
         setFilteredList(
             itemProduct.filter(item =>{
                 return(
@@ -52,9 +60,38 @@ export default function HomePage(){
         )
     }
 
+
+    //mỗi lần [selectedBrand, selectedMemory, search] thay đổi thì gọi  hàm  handleChangeData(selectedBrand, selectedMemory, search);
+
     useEffect(() =>{
+        console.log(selectedBrand);
         handleChangeData(selectedBrand, selectedMemory, search);
     }, [selectedBrand, selectedMemory, search])
+
+    // const searchFilter = () => {
+    //     return(
+    //         searchText.toLowerCase()
+    //     )
+    // }
+
+    useEffect(() => {
+        const queryStringResult = queryString.parse(window.location.search)
+        const brands = queryStringResult.brand?.split(',') || [];
+        //dùng ? khi không chắc chắn , ví dụ brand chưa chưa chắc chắn có phải string hay không mà có thể là mảng rỗng , array rổng
+        const memories = queryStringResult.memory?.split(',') || []
+        const searchText = queryStringResult.search || ""
+        if(brands.length){
+            setSelectedBrand(brands)
+        }
+        if(memories.length){
+            setSelectedMemory(memories)
+        }
+        if(searchText){
+            setSearch(searchText)
+        }
+    },[])
+
+
 
     return(
         <>
@@ -69,7 +106,5 @@ export default function HomePage(){
             />
             <Footer/>
         </>
-
-
     )
 }

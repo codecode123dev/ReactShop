@@ -1,8 +1,8 @@
-import React,{useEffect,useState,useNavigate } from "react";
+// import React,{useEffect,useState,useNavigate } from "react";
 import { FilteredList } from "./FilteredList";
-import { BrowserRouter } from 'react-router-dom';
-import queryString from "query-string";
-import { itemProduct } from "../pages/HomePage";
+// import { BrowserRouter } from 'react-router-dom';
+// import queryString from "query-string";
+// import { itemProduct } from "../pages/HomePage";
 
 
 
@@ -32,6 +32,7 @@ export function FilterBrandAndMemory(props){
     // history.pushState(state, "", url);
 
     const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory} = props;
+
 
     const changeRoute = (nameCategory,newSelected) =>{
         const url = new URL(window.location);
@@ -64,14 +65,16 @@ export function FilterBrandAndMemory(props){
         changeRoute("memory",newSelected)
 
     }
+
+    console.log(selectedBrand);
     //get url push to console
-    console.log(queryString.parse(window.location.search), {arrayFormat: 'comma'});
+    // console.log(queryString.parse(window.location.search), {arrayFormat: 'comma'});
 
     return(
         <>
         <div className="product-main-content row">
             <>
-            {/* chuyền từ FilteredList  */}
+            {/* chuyền từ FilteredList ra đây */}
                 <FilteredList filteredList={filteredList}/>
             </>
             <div className="option-product col-xl-3 col-sm-3 row">
@@ -90,7 +93,7 @@ export function FilterBrandAndMemory(props){
                                                     className="form-check-input"
                                                     type="checkbox"
                                                     onChange={() => handleBrandChange(item.name)}
-                                                    value={selectedBrand.includes(item.name)}
+                                                    checked={selectedBrand.includes(item.name)}
                                                     id={item.id}
                                                 />
                                                 <link to="/"></link>
@@ -119,7 +122,7 @@ export function FilterBrandAndMemory(props){
                                                 className="form-check-input"
                                                 type="checkbox"
                                                 onChange={() => handleMemoryChange(item.name)}
-                                                value={selectedMemory.includes(item.name)}
+                                                checked={selectedMemory.includes(item.name)}
                                                 id={item.id}
                                             />
                                             <label className={`form-check-label ${item.className}`} htmlFor={item.id} >

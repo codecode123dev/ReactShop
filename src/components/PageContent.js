@@ -2,20 +2,24 @@ import React, { useState,useEffect } from "react";
 import { Icons } from "../assets/icons";
 import '../assets/css/PageContent.css';
 import { ContentAllIcons } from "./ContentAllIcons";
-import { ContentProducts } from "./ContentProducts";
+// import { ContentProducts } from "./ContentProducts";
 import { Breadcrumb } from "./Breadcrumb";
 import { OptionMainContent } from "./OptionMainContent";
-import { FilterCategoryProducts } from "./FilterCategoryProducts";
-import { FilterBrands } from "./FilterBrands";
-import { TestFilterBrandAndMemory } from "./TestFilterBrandAndMemory";
-import { Test } from "./Test";
+// import { FilterCategoryProducts } from "./FilterCategoryProducts";
+// import { FilterBrands } from "./FilterBrands";
+// import { TestFilterBrandAndMemory } from "./TestFilterBrandAndMemory";
+// import { Test } from "./Test";
 import { FilterBrandAndMemory } from "./FilterBrandAndMemory";
 
 export default function PageContent(props) {
     let url = '#';
 
+
+    // filteredList tương đương với viết props.filteredList
     const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory} = props;
-   
+
+    
+
     return (
         <div className="page-content row">
             <aside className="aside col-xl-3">
