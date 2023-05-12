@@ -1,4 +1,4 @@
-// import React,{useEffect,useState,useNavigate } from "react";
+import React, {useState } from "react";
 import { FilteredList } from "./FilteredList";
 // import { BrowserRouter } from 'react-router-dom';
 // import queryString from "query-string";
@@ -26,12 +26,38 @@ export function FilterBrandAndMemory(props){
         { name: '128 Gb', id: 'flexCheckChecked128' },
         { name: '256 Gb', id: 'flexCheckChecked256' }
     ];
+
+    const itemsTechnique = [
+        { name: 'iPad Pro', number: 10, id: 'flexCheckDefaultIpad' },
+        { name: 'Media Pad', number: 2, id: 'flexCheckDefaultMedia' },
+        { name: 'iPad mini', number: 4, id: 'flexCheckDefaultIpadMini' },
+        { name: 'Galaxy Tab S', number: 14, id: 'flexCheckDefaultGalaxyS' },
+        { name: 'Galaxy Tab A', number: 12, id: 'flexCheckDefaultGalaxyA' },
+        { name: 'Muze', number: 7, id: 'flexCheckDefaultMuze' },
+        { name: 'iPad Pro', number: 10, id: '' },
+        { name: 'iPad Pro', number: 10, id: '' },
+        { name: 'iPad Pro', number: 10, id: '' },
+        { name: 'iPad Pro', number: 10, id: '' }
+    ]
+
+    const itemsFeatures = [
+        { name: 'Calorie monitoring', id: 'flexCheckCalorie' },
+        { name: 'Sleep Monitoring', id: 'flexCheckSleep' },
+        { name: 'Physical activity', id: 'flexCheckPhysical' },
+        { name: 'Pulse Measurement', id: 'flexCheckPulse' },
+        { name: 'Stopwatch', id: 'flexCheckStopwatch' },
+        { name: 'Timer', id: 'flexCheckTimer' },
+        { name: 'Sleep Monitoring', id: '' },
+        { name: 'Sleep Monitoring', id: '' },
+        { name: 'Sleep Monitoring', id: '' }
+    ]
+
     // const state = { page_id: 1, user_id: 5 };
     // const url = "hello-world.html";
 
     // history.pushState(state, "", url);
 
-    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory} = props;
+    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory,selectedTechnique ,setSelectedTechnique } = props;
 
 
     const changeRoute = (nameCategory,newSelected) =>{
@@ -66,8 +92,21 @@ export function FilterBrandAndMemory(props){
 
     }
 
-    console.log(selectedBrand);
+
+    const handleTechniqueChange = (name) =>{
+        let newSelected = [];
+        if (selectedTechnique.some((i) => i === name)){
+            newSelected = selectedTechnique.filter((i) => i !== name)
+        }
+        else newSelected =[...selectedTechnique ,name]
+        setSelectedMemory(newSelected)
+
+        //get url push to route
+        changeRoute("technique",newSelected)
+
+    }
     //get url push to console
+    // console.log(selectedBrand);
     // console.log(queryString.parse(window.location.search), {arrayFormat: 'comma'});
 
     return(
@@ -96,7 +135,6 @@ export function FilterBrandAndMemory(props){
                                                     checked={selectedBrand.includes(item.name)}
                                                     id={item.id}
                                                 />
-                                                <link to="/"></link>
                                                 <label className={`form-check-label ${item.className}`} htmlFor={item.id} >
                                                     {item.name}
                                                 </label>
@@ -135,6 +173,37 @@ export function FilterBrandAndMemory(props){
                         </div>
                     </div>
                 </div>
+                {/*  Technique Series  */}
+                    <div className="option-product-detail-technique col-xl-12">
+                        <div className="head-option-product-technique">
+                            <div>Technique Series</div>
+                            <i className="fa fa-chevron-down" aria-hidden="true"></i>
+                        </div>
+                        <div className="checkbox-all-technique font-size-5rem">
+                            <div className="checkbox-technique">
+                                {itemsTechnique.map((item, index) => {
+                                    return (
+                                        <>
+                                            <div className="form-check check-box-technique">
+                                                <input 
+                                                className="form-check-input" 
+                                                type="checkbox" 
+                                                onChange={() => handleTechniqueChange(item.name)}
+                                                checked={selectedTechnique.includes(item.name)}
+                                                id={item.id}
+                                                />
+                                                <label className="form-check-label text-check-label" htmlFor={item.id}>
+                                                    {item.name}
+                                                </label>
+                                                <label className="content-item-technique content-iPad font-size-12">{item.number}</label>
+                                            </div>
+                                        </>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                    {/*  End Technique Series  */}
             </div>
         </div>
     </>
