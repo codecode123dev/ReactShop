@@ -31,7 +31,8 @@ export default function HomePage(){
     // const selectedMemory = useStateMemory[0]
     // const setSelectedMemory = useStateMemory[0]
     const [selectedMemory, setSelectedMemory] = useState([]);
-    const [selectedTechnique,setSelectedTechnique] = useState([])
+    const [selectedTechnique, setSelectedTechnique] = useState([])
+    // const [selectedTechnique,setSelectedTechnique] = useState([])
 
     
 
@@ -50,7 +51,7 @@ export default function HomePage(){
 
     }
 
-    const handleChangeData = (brands, memories,techniques, searchText) =>{
+    const handleChangeData = (brands, memories, techniques, searchText) =>{
 
         setFilteredList(
             itemProduct.filter(item =>{
@@ -59,6 +60,7 @@ export default function HomePage(){
                     (memories.length ? memories.includes(item.memory) : true) &&
                     (brands.length ? brands.includes(item.brand) : true) &&
                     (techniques.length ? techniques.includes(item.technique) : true)
+
                 )
             })
         )
@@ -70,7 +72,7 @@ export default function HomePage(){
     useEffect(() =>{
         // console.log(selectedBrand);
         handleChangeData(selectedBrand, selectedMemory,selectedTechnique, search);
-    }, [selectedBrand, selectedMemory,selectedTechnique, search])
+    }, [selectedBrand, selectedMemory, selectedTechnique, search])
 
     // const searchFilter = () => {
     //     return(
@@ -80,6 +82,7 @@ export default function HomePage(){
 
 
 
+    // xử lý khi gửi link cho người khác mà không bị mất dữ liệu
     useEffect(() => {
         const queryStringResult = queryString.parse(window.location.search)
         //dùng ? khi không chắc chắn , ví dụ brand chưa chưa chắc chắn có phải string hay không mà có thể là mảng rỗng , array rổng
@@ -93,12 +96,13 @@ export default function HomePage(){
         if(memories.length){
             setSelectedMemory(memories)
         }
+        if(techniques){
+            setSelectedTechnique(techniques)
+        }
         if(searchText){
             setSearch(searchText)        
         }
-        if(techniques.length){
-            setSelectedTechnique(techniques)
-        }
+        
     },[])
 
 

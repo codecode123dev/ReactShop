@@ -16,7 +16,7 @@ export default function PageContent(props) {
 
 
     // filteredList tương đương với viết props.filteredList
-    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory, selectedTechnique,setSelectedTechnique} = props;
+    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory, selectedTechnique, setSelectedTechnique} = props;
 
     
 
@@ -72,6 +72,8 @@ export default function PageContent(props) {
                         setSelectedMemory={setSelectedMemory}
                         selectedTechnique={selectedTechnique}
                         setSelectedTechnique={setSelectedTechnique}
+                        // selectedTechnique={selectedTechnique}
+                        // setSelectedTechnique={setSelectedTechnique}
                     />
                 </div>
             </main>
