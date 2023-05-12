@@ -16,9 +16,8 @@ export default function PageContent(props) {
 
 
     // filteredList tương đương với viết props.filteredList
-    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory, selectedTechnique, setSelectedTechnique} = props;
+    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory, selectedTechnique, setSelectedTechnique, selectedFeature, setSelectedFeature} = props;
 
-    
 
     return (
         <div className="page-content row">
@@ -44,7 +43,7 @@ export default function PageContent(props) {
                 <div className="main-content">
                     <div className="head-main-content">
                         <Breadcrumb/>
-                        <OptionMainContent/>
+                        <OptionMainContent  />
                     </div>
                     {/* <div className="product-main-content row">
                         <div className=" row col-xl-9 col-sm-9 col-12  product-items">
@@ -72,8 +71,8 @@ export default function PageContent(props) {
                         setSelectedMemory={setSelectedMemory}
                         selectedTechnique={selectedTechnique}
                         setSelectedTechnique={setSelectedTechnique}
-                        // selectedTechnique={selectedTechnique}
-                        // setSelectedTechnique={setSelectedTechnique}
+                        selectedFeature={selectedFeature}
+                        setSelectedFeature={setSelectedFeature}
                     />
                 </div>
             </main>

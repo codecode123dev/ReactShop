@@ -7,7 +7,7 @@ import '../assets/css/Header.css';
 
 
 
-function Test() {
+function ItemsContentHeader() {
     const url="#";
     const items = [
         { id: 1, name: 'Today’s Deals', dropdownContent: ['Action', 'Another action', 'Something else here'] },
@@ -19,7 +19,7 @@ function Test() {
             {items.map((item, index) => {
                 return (
                     <div  key={index} className="dropdown content-item-first">
-                        <div   class="content-dropdown " data-toggle="dropdown"  aria-haspopup="true">
+                        <div   className="content-dropdown " data-toggle="dropdown"  aria-haspopup="true">
                             <p>{item.name}</p>
                             <i className="fa fa-chevron-down" aria-hidden="true"></i>
                         </div>
@@ -46,15 +46,15 @@ export default function Header(props) {
         <>
             <header className="header">
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="nav-brand">
-                        <i class="fa fa-bars header-bars-icons" aria-hidden="true"></i>
+                    <div className="nav-brand">
+                        <i className="fa fa-bars header-bars-icons" aria-hidden="true"></i>
                         <a href={url}>
-                            <img class="img-constructor" src={Icons.constructor} alt="constructor" />
+                            <img className="img-constructor" src={Icons.constructor} alt="constructor" />
                         </a>
                     </div>
                     <div className="wrap-nav-content" id="navbarNavAltMarkup">
                         <div className="navbar-nav">
-                                <Test/>
+                                <ItemsContentHeader/>
                             <div>
                                 <a className="content-dropdown-third" href={url}>Customer Service</a>
                             </div>

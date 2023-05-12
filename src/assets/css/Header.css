@@ -26,3 +26,14 @@ a.account-item {
 a.cart-item {
     display: flex;
 } */
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    /* width: 61px; */
+    font-size: 1rem;
+}
+.dropdown-menu {
+    position: absolute;
+    left: 0;
+    top: 35px;
+}

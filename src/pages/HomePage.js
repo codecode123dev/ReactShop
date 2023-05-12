@@ -3,24 +3,24 @@ import Header from "../components/Header";
 import PageContent from "../components/PageContent";
 import Footer from "../components/Footer";
 import queryString from "query-string";
-
+import { OptionMainContent } from "../components/OptionMainContent";
 
 export const itemProduct = [
-    { category: 'LAPTOPS', img: require('../assets/img/Apple_Mac.png'), name: 'Apple Mac Book Pro', price: '950.00',brand:'Apple', memory:'16 Gb', technique:'iPad Pro'  },
-    { category: 'TABLETS', img: require('../assets/img/IPad_Pro.png'), name: 'iPad Pro 11', price: '950.00',brand:'Apple', memory:'256 Gb', technique:'iPad Pro'  },
-    { category: 'COMPUTERS', img: require('../assets/img/Samsung_Qled.png'), name: 'Samsung Qled 4K', price: '950.00',brand:'Samsung', memory:'8Gb', technique:'iPad mini' },
-    { category: 'PHONES', img: require('../assets/img/Samsung_galaxy_s10.png'), name: 'Samsung Galaxy s10', price: '950.00',brand:'Samsung', memory:'64 Gb', technique:'Galaxy Tab S' },
-    { category: 'TABLETS', img: require('../assets/img/IpadPro11.png'), name: 'iPad Pro 11', price: '950.00',brand:'Apple', memory:'32 Gb', technique:'Galaxy Tab A' },
-    { category: 'COMPUTERS', img: require('../assets/img/loudspeaker.png'), name: 'Samsung Qled 4K', price: '950.00',brand:'Samsung', memory:'8Gb', technique:'Muze' },
-    { category: 'TABLETS', img: require('../assets/img/Microsoft_surface.png'), name: 'Microsoft Surface Studio', price: '950.00',brand:'Apple', memory:'128 Gb', technique:'Media Pad' },
-    { category: 'WATCHES', img: require('../assets/img/Samsung_watch.png'), name: 'Samsung Watch', price: '950.00',brand:'Samsung', memory:'8Gb', technique:'iPad mini' },
-    { category: 'COMPUTERS', img: require('../assets/img/ProDisplayXDR.png'), name: 'Pro Display XDR', price: '950.00',brand:'Apple', memory:'64 Gb', technique:'iPad Pro' },
-    { category: 'BLACK FRIDAY', img: require('../assets/img/Gamepad_Xbox_one.png'), name: 'Gamepad Xbox One X', price: '950.00',brand:'Apple', memory:'32 Gb', technique:'Muze' },
-    { category: 'WATCHES', img: require('../assets/img/Smart_watch.png'), name: 'Smart Watch', price: '950.00',brand:'Apple' , memory:'32 Gb', technique:'Media Pad'},
-    { category: 'GADGET', img: require('../assets/img/GoogleNest.png'), name: 'Google Nest', price: '950.00',brand:'Apple' , memory:'16 Gb', technique:'iPad Pro'},
-    { category: 'WATCHES', img: require('../assets/img/laptopSmart.png'), name: 'Smart Watch', price: '950.00',brand:'Apple' , memory:'32 Gb', technique:'Media Pad'},
-    { category: 'WATCHES', img: require('../assets/img/SmartWatchPink.png'), name: 'Apple Watch', price: '950.00',brand:'Apple', memory:'128 Gb', technique:'Galaxy Tab S' },
-    { category: 'GADGET', img: require('../assets/img/ApplePhone.png'), name: 'Apple iPod', price: '950.00',brand:'Apple', memory:'128 Gb', technique:'Galaxy Tab A' }
+    { category: 'LAPTOPS', img: require('../assets/img/Apple_Mac.png'), name: 'Apple Mac Book Pro', price: '950.00',brand:'Apple', memory:'16 Gb', technique:'iPad Pro', feature:'Calorie monitoring'  },
+    { category: 'TABLETS', img: require('../assets/img/IPad_Pro.png'), name: 'iPad Pro 11', price: '950.00',brand:'Apple', memory:'256 Gb', technique:'iPad Pro', feature:'Sleep Monitoring'  },
+    { category: 'COMPUTERS', img: require('../assets/img/Samsung_Qled.png'), name: 'Samsung Qled 4K', price: '950.00',brand:'Samsung', memory:'8Gb', technique:'iPad mini', feature:'Physical activity' },
+    { category: 'PHONES', img: require('../assets/img/Samsung_galaxy_s10.png'), name: 'Samsung Galaxy s10', price: '950.00',brand:'Samsung', memory:'64 Gb', technique:'Galaxy Tab S', feature:'Pulse Measurement' },
+    { category: 'TABLETS', img: require('../assets/img/IpadPro11.png'), name: 'iPad Pro 11', price: '950.00',brand:'Apple', memory:'32 Gb', technique:'Galaxy Tab A', feature:'Stopwatch' },
+    { category: 'COMPUTERS', img: require('../assets/img/loudspeaker.png'), name: 'Samsung Qled 4K', price: '950.00',brand:'Samsung', memory:'8Gb', technique:'Muze', feature:'Timer' },
+    { category: 'TABLETS', img: require('../assets/img/Microsoft_surface.png'), name: 'Microsoft Surface Studio', price: '950.00',brand:'Apple', memory:'128 Gb', technique:'Media Pad', feature:'Physical activity' },
+    { category: 'WATCHES', img: require('../assets/img/Samsung_watch.png'), name: 'Samsung Watch', price: '950.00',brand:'Samsung', memory:'8Gb', technique:'iPad mini', feature:'Pulse Measurement' },
+    { category: 'COMPUTERS', img: require('../assets/img/ProDisplayXDR.png'), name: 'Pro Display XDR', price: '950.00',brand:'Apple', memory:'64 Gb', technique:'iPad Pro', feature:'Sleep Monitoring' },
+    { category: 'BLACK FRIDAY', img: require('../assets/img/Gamepad_Xbox_one.png'), name: 'Gamepad Xbox One X', price: '950.00',brand:'Apple', memory:'32 Gb', technique:'Muze', feature:'Physical activity' },
+    { category: 'WATCHES', img: require('../assets/img/Smart_watch.png'), name: 'Smart Watch', price: '950.00',brand:'Apple' , memory:'32 Gb', technique:'Media Pad', feature:'Calorie monitoring'},
+    { category: 'GADGET', img: require('../assets/img/GoogleNest.png'), name: 'Google Nest', price: '950.00',brand:'Apple' , memory:'16 Gb', technique:'iPad Pro', feature:'Sleep Monitoring'},
+    { category: 'WATCHES', img: require('../assets/img/laptopSmart.png'), name: 'Smart Watch', price: '950.00',brand:'Apple' , memory:'32 Gb', technique:'Media Pad', feature:'Timer'},
+    { category: 'WATCHES', img: require('../assets/img/SmartWatchPink.png'), name: 'Apple Watch', price: '950.00',brand:'Apple', memory:'128 Gb', technique:'Galaxy Tab S', feature:'Calorie monitoring' },
+    { category: 'GADGET', img: require('../assets/img/ApplePhone.png'), name: 'Apple iPod', price: '950.00',brand:'Apple', memory:'128 Gb', technique:'Galaxy Tab A', feature:'Physical activity' }
 ];
 
 
@@ -32,11 +32,13 @@ export default function HomePage(){
     // const setSelectedMemory = useStateMemory[0]
     const [selectedMemory, setSelectedMemory] = useState([]);
     const [selectedTechnique, setSelectedTechnique] = useState([])
+    const [selectedFeature, setSelectedFeature] = useState([])
     // const [selectedTechnique,setSelectedTechnique] = useState([])
 
-    
 
     const[search, setSearch] = useState("");
+    const [selectedSort, setSelectedSort] = useState()
+
 
     const changeRoute = (nameCategory,newSelected) =>{
         const url = new URL(window.location);
@@ -51,7 +53,7 @@ export default function HomePage(){
 
     }
 
-    const handleChangeData = (brands, memories, techniques, searchText) =>{
+    const handleChangeData = (brands, memories, techniques,features, searchText) =>{
 
         setFilteredList(
             itemProduct.filter(item =>{
@@ -59,8 +61,8 @@ export default function HomePage(){
                     (searchText ? item.name.toLowerCase().indexOf(searchText.toLowerCase()) !== -1 : true) &&
                     (memories.length ? memories.includes(item.memory) : true) &&
                     (brands.length ? brands.includes(item.brand) : true) &&
-                    (techniques.length ? techniques.includes(item.technique) : true)
-
+                    (techniques.length ? techniques.includes(item.technique) : true) && 
+                    (features.length ? features.includes(item.feature) : true)
                 )
             })
         )
@@ -71,8 +73,8 @@ export default function HomePage(){
 
     useEffect(() =>{
         // console.log(selectedBrand);
-        handleChangeData(selectedBrand, selectedMemory,selectedTechnique, search);
-    }, [selectedBrand, selectedMemory, selectedTechnique, search])
+        handleChangeData(selectedBrand, selectedMemory,selectedTechnique, selectedFeature, search);
+    }, [selectedBrand, selectedMemory, selectedTechnique,selectedFeature, search])
 
     // const searchFilter = () => {
     //     return(
@@ -89,6 +91,7 @@ export default function HomePage(){
         const brands = queryStringResult.brand?.split(',') || [];
         const memories = queryStringResult.memory?.split(',') || []
         const techniques = queryStringResult.technique?.split(',') || []
+        const features = queryStringResult.feature?.split(',') || []
         const searchText = queryStringResult.search || ""
         if(brands.length){
             setSelectedBrand(brands)
@@ -96,13 +99,15 @@ export default function HomePage(){
         if(memories.length){
             setSelectedMemory(memories)
         }
-        if(techniques){
+        if(techniques.length){
             setSelectedTechnique(techniques)
         }
-        if(searchText){
-            setSearch(searchText)        
+        if(features.length){
+            setSelectedFeature(features)
         }
-        
+        if(searchText){
+            setSearch(searchText)
+        }
     },[])
 
 
@@ -110,6 +115,7 @@ export default function HomePage(){
     return(
         <>
             <Header search={search} onChange={handleSearch}/>
+
             <PageContent
                 filteredList={filteredList}
                 setFilteredList={setFilteredList}
@@ -119,6 +125,10 @@ export default function HomePage(){
                 setSelectedMemory={setSelectedMemory}
                 selectedTechnique={selectedTechnique}
                 setSelectedTechnique={setSelectedTechnique}
+                selectedFeature={selectedFeature}
+                setSelectedFeature={setSelectedFeature}
+                
+                // handleSortPrice={handleSortPrice}
             />
             <Footer/>
         </>

@@ -1,7 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 
-export function OptionMainContent(){
+
+const OPTION_SORT = {
+    PRICE: 'price',
+    NAME: 'name',
+    POPULARITY: 'popularity'
+}
+export function OptionMainContent(props){
     const url = '#';
+
+    // const [selectedSort, setSelectedSort] = useState()
+
+    // const handlePrice = () => {
+    //     setSelectedSort(OPTION_SORT.PRICE)
+    // }
+
+    // const handleSortPrice = () ={
+
+    // }
+
+
     return(
         <div className="option-main-content font-size-2rem">
             <div className="title-main-content">Apple Pro Display XDR</div>
@@ -18,7 +36,7 @@ export function OptionMainContent(){
                         <i className="fa fa-chevron-down icons-after-new" aria-hidden="true"></i>
                     </div>
                     <div className="option-child-detail option-child-price">
-                        <a href={url}>Price</a>
+                        <a href={url} >Price</a>
                     </div>
                     <div className="option-child-detail option-child-rating">
                         <a href={url}>Rating</a>
