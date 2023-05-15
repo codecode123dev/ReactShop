@@ -7,7 +7,7 @@ export function FilteredList(props){
         <div className=" row col-xl-9 col-sm-9 col-12  product-items">
                 {props.filteredList.map((item, index) => {
                     return (
-                        <>
+                        <React.Fragment key={index}>
                             <div className="col-xl-4 col-sm-4 col-12 wrap-product-item " >
                                 <div className="product-items-content" >
                                     <a href={url} className="product-item-img">
@@ -24,7 +24,7 @@ export function FilteredList(props){
                                     </div>
                                 </div>
                             </div>
-                        </>
+                        </React.Fragment>
                     )
                 })}
                 <div className="row wrap-show-product">

@@ -10,14 +10,24 @@ import { OptionMainContent } from "./OptionMainContent";
 // import { TestFilterBrandAndMemory } from "./TestFilterBrandAndMemory";
 // import { Test } from "./Test";
 import { FilterBrandAndMemory } from "./FilterBrandAndMemory";
+import { OPTION_SORT } from "../pages/HomePage";
 
 export default function PageContent(props) {
     let url = '#';
 
+    const listSort = [
+        {title: "Popularity", value: OPTION_SORT.POPULARITY},
+        {title: "New", value: OPTION_SORT.NEW},
+        {title: "Price", value: OPTION_SORT.PRICE},
+        {title: "Name", value: OPTION_SORT.NAME},
+    ]
 
     // filteredList tương đương với viết props.filteredList
-    const {filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory, selectedTechnique, setSelectedTechnique, selectedFeature, setSelectedFeature} = props;
-
+    const {
+        filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory,
+        selectedTechnique, setSelectedTechnique, selectedFeature, setSelectedFeature ,handlePrice,
+        handleSortPrice , selectedSort, onSort
+    } = props;
 
     return (
         <div className="page-content row">
@@ -43,7 +53,51 @@ export default function PageContent(props) {
                 <div className="main-content">
                     <div className="head-main-content">
                         <Breadcrumb/>
-                        <OptionMainContent  />
+                        {/* <OptionMainContent  /> */}
+                        <div className="option-main-content font-size-2rem">
+                            <div className="title-main-content">Apple Pro Display XDR</div>
+                            <div className="option font-size-2rem">
+                                <div className="option-child">
+                                    <div className="option-child-detail">
+                                        <a href={url}>Sort By:</a>
+                                    </div>
+                                    {listSort.map((item,index) => {
+                                        return(
+                                            <div key={index} className="option-child-detail">
+                                                <span
+                                                    className={`sort-item ${item.value === selectedSort ? 'selected-sort-item' : ''}`}
+                                                    onClick={() => onSort(item.value)}
+                                                >
+                                                    {item.title}
+                                                </span>
+                                            </div>
+                                        )
+                                    })}
+
+                                </div>
+                                <div className="icons-option">
+                                    <div className="option-child-detail">
+                                        <i className="fa fa-th" aria-hidden="true"></i>
+                                    </div>
+                                    <div className="option-child-detail ">
+                                        <i className="fa fa-list" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <div className="filters-items">
+                                    <div className="filter-content">
+                                        <p className="filters">Filters</p>
+                                        <i className="fa fa-wifi icons-after-filter" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="sort-by">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                                    <option selected>Open this select menu</option>
+                                    <option value="Ascending">Ascending </option>
+                                    <option value="Descending">Descending</option>
+                                </select>           
+                            </div>
+                        </div>
                     </div>
                     {/* <div className="product-main-content row">
                         <div className=" row col-xl-9 col-sm-9 col-12  product-items">

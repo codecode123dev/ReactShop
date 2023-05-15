@@ -36,7 +36,10 @@ export function OptionMainContent(props){
                         <i className="fa fa-chevron-down icons-after-new" aria-hidden="true"></i>
                     </div>
                     <div className="option-child-detail option-child-price">
-                        <a href={url} >Price</a>
+                        <a href={url} 
+                        // onClick={() => handlePrice()} 
+                        // onChange={() => props.handleSortPrice()} 
+                        >Price</a>
                     </div>
                     <div className="option-child-detail option-child-rating">
                         <a href={url}>Rating</a>
