@@ -1,6 +1,13 @@
 import HomePage from './pages/HomePage';
-
 import React from 'react';
+import Account from './components/Account';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom';
+
 
 const objectData = [
   {name:'Javascript', price: 500},
@@ -59,11 +66,45 @@ function Test() {
 
 function App() {
   return (
-    <>
-        <HomePage/>
+    <Router>
+      {/* <nav>
+        <Link to="/">Home</Link>
+        <Link to="/home">Account</Link>
+      </nav>
+      <Switch>
+        <Route exact path="/">
+          <HomePage />
+        </Route>
+        <Route exact path="/account">
+          <Account />
+        </Route>
+        <Route path="/products/:productId">
+          <ProductDetail />
+        </Route>
+      </Switch> */}
+        {/* <HomePage/> */}
         {/* <Test/> */}
-    </>
+        <div className="App">
+        < HomePage />
+        </div>
+    </Router>
   );
 }
 
 export default App;
+
+// async function getFile() {
+//   let myPromise = new Promise(function(resolve) {
+//     let req = new XMLHttpRequest();
+//     req.open('GET', "mycar.html");
+//     req.onload = function() {
+//       if (req.status == 200) {
+//         resolve(req.response);
+//       } else {
+//         resolve("File not Found");
+//       }
+//     };
+//     req.send();
+//   });
+//   document.getElementById("demo").innerHTML = await myPromise;
+// }

@@ -25,7 +25,7 @@ export function ContentAllIcons() {
         <div className="aside-icons">
             {icons.map((item, index) => {
                 return (
-                    <>
+                    <React.Fragment key={index}>
                         <div className='wrap-content-icon'  >
                             <div className={` ${item.className1}`}  >
                                 <div className="icons-content icons-size" data-toggle="dropdown" aria-haspopup="true">
@@ -43,16 +43,18 @@ export function ContentAllIcons() {
                                 </div>
 
                                 <div className="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuButton">
-                                    {item.dropdownContent.map((content) => {
+                                    {item.dropdownContent.map((content, index) => {
                                         return (
-                                            <a className="dropdown-item" href={url}>{content}</a>
+                                            <React.Fragment key={index}>
+                                                <a className="dropdown-item" href={url}>{content}</a>
+                                            </React.Fragment>
                                         );
                                     })}
                                 </div>
                             </div>
 
                         </div>
-                    </>
+                    </React.Fragment>
                 );
             })}
         </div>

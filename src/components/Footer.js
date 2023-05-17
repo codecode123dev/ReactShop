@@ -47,7 +47,9 @@ export default function Footer() {
                     <div className="information-detail-first  col-5 col-xl-6 row gap-xl-2 ">
                         {contentFooterFirst.map((item,index) => {
                             return(
-                                <a className="col-xl-12" href={url}>{item.name}</a>
+                                <React.Fragment key={index}>
+                                    <a className="col-xl-12" href={url}>{item.name}</a>
+                                </React.Fragment>
                             )
                         })}
                     </div>
@@ -55,7 +57,9 @@ export default function Footer() {
                     <div className="information-detail-second col-6 offset-1 offset-md-0 col-xl-6 row gap-xl-2">
                         {contentFooterSecond.map((item,index) => {
                             return(
-                                <a className="col-xl-12" href={url}>{item.name}</a>
+                                <React.Fragment key={index}>
+                                    <a className="col-xl-12" href={url}>{item.name}</a>
+                                </React.Fragment>
                             )
                         })}
                     </div>
@@ -65,7 +69,9 @@ export default function Footer() {
                 <div className="information-detail-third font-size-14  col-xl-2 row gap-xl-2-half ">
                     {contentFooterThird.map((item,index) => {
                         return(
-                            <a className="col-xl-12" href={url}>{item.name}</a>
+                            <React.Fragment key={index}>
+                                <a className="col-xl-12" href={url}>{item.name}</a>
+                            </React.Fragment>
                         )
                     })} 
                    
