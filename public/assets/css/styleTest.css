@@ -292,6 +292,7 @@ div.icons-size {
 /* Main content  */
 .detail-breadcrumb {
     font-size: 1.2rem;
+    display: flex;
 }
 
 .head-main-content {
@@ -387,12 +388,12 @@ div>#new {
     max-width: 182px;
 
 }
-
+/* 
 .product-items {
     display: flex;
     align-items: center;
     text-align: center;
-}
+} */
 
 .detail-product>p {
     margin: 0;
@@ -1558,6 +1559,9 @@ img.img-constructor {
 .navbar .nav-brand {
     cursor: pointer;
     margin-left: 32px;
+    display: flex;
+    align-items: center;
+
 }
 
 
@@ -1609,7 +1613,6 @@ img.img-constructor {
 
 img.img-constructor {
     margin-left: 18px;
-    padding-bottom: 6px;
 }
 
 .check-box-technique {

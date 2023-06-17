@@ -11,6 +11,7 @@ import { OptionMainContent } from "./OptionMainContent";
 // import { Test } from "./Test";
 import { FilterBrandAndMemory } from "./FilterBrandAndMemory";
 import { OPTION_SORT } from "../pages/HomePage";
+import { OPTION_SORT_ORDER } from "../pages/HomePage";
 
 export default function PageContent(props) {
     let url = '#';
@@ -22,11 +23,17 @@ export default function PageContent(props) {
         {title: "Name", value: OPTION_SORT.NAME},
     ]
 
+    const listSortOrder = [
+        {title: "Ascending", value : OPTION_SORT_ORDER.ASCENDING},
+        {title: "Descending", value : OPTION_SORT_ORDER.DESCENDING }
+    ]
+    
+
     // filteredList tương đương với viết props.filteredList
     const {
         filteredList, setFilteredList, selectedBrand, setSelectedBrand, selectedMemory, setSelectedMemory,
-        selectedTechnique, setSelectedTechnique, selectedFeature, setSelectedFeature ,handlePrice,
-        handleSortPrice , selectedSort, onSort
+        selectedTechnique, setSelectedTechnique, selectedFeature, setSelectedFeature ,
+        selectedSort, onSort, handleChangeSort, sortPrice
     } = props;
 
     return (
@@ -90,32 +97,8 @@ export default function PageContent(props) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="sort-by">
-                                <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                                    <option selected>Open this select menu</option>
-                                    <option value="Ascending">Ascending </option>
-                                    <option value="Descending">Descending</option>
-                                </select>           
-                            </div>
                         </div>
                     </div>
-                    {/* <div className="product-main-content row">
-                        <div className=" row col-xl-9 col-sm-9 col-12  product-items">
-                            {itemProduct.map((item, index) => {
-                                return (
-                                    <>
-                                        <ContentProducts name={item.name} img={item.img} category={item.category} price={item.price} />
-                                    </>
-                                )
-                            })}
-                            <div className="row wrap-show-product">
-                                <button className="btn-show-product ">Show More</button>
-                            </div>
-                        </div>
-                        <div className="option-product col-xl-3 col-sm-3 row">
-                            <FilterCategoryProducts/>
-                        </div>
-                    </div> */}
                     <FilterBrandAndMemory
                         filteredList={filteredList}
                         setFilteredList={setFilteredList}

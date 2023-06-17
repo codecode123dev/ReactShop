@@ -161,7 +161,7 @@ export function FilterBrandAndMemory(props) {
                                 {itemsBrand.map((item, index) => {
                                     return (
                                         <>
-                                            <div className="form-check col-xl-6">
+                                            <div key={index} className="form-check col-xl-6">
                                                 <input
                                                     className="form-check-input"
                                                     type="checkbox"
@@ -189,7 +189,7 @@ export function FilterBrandAndMemory(props) {
                                 {itemsMemory.map((item, index) => {
                                     return (
                                         <>
-                                            <div className="form-check col-xl-6">
+                                            <div key={index} className="form-check col-xl-6">
                                                 <input
                                                     className="form-check-input"
                                                     type="checkbox"
@@ -218,7 +218,7 @@ export function FilterBrandAndMemory(props) {
                                 {checkboxTechnique.map((item, index) => {
                                     return (
                                         <>
-                                            <div className="form-check check-box-technique">
+                                            <div key={index} className="form-check check-box-technique" >
                                                 <input className="form-check-input"
                                                     type="checkbox"
                                                     checked={selectedTechnique.includes(item.name)}
@@ -246,7 +246,7 @@ export function FilterBrandAndMemory(props) {
                                 {checkboxFeatures.map((item, index) => {
                                     return (
                                         <>
-                                            <div className="form-check check-box-technique">
+                                            <div key={index} className="form-check check-box-technique">
                                                 <input className="form-check-input" 
                                                 type="checkbox" 
                                                 checked={selectedFeature.includes(item.name)} 
@@ -274,7 +274,7 @@ export function FilterBrandAndMemory(props) {
                                 {itemColorsRowOne.map((item, index) => {
                                     return (
                                         <>
-                                        <div className="color-items col-xl-4">
+                                        <div key={index} className="color-items col-xl-4">
                                             <span className={`style-color-one ${item.className}`}></span>
                                             <p>{item.name}</p>
                                         </div>

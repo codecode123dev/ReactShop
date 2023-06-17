@@ -6,7 +6,7 @@ export function ContentAllIcons() {
     const url ="#";
 
     const icons = [
-        {id:1, name: 'Speakers', img: `${Icons.speakers}`, dropdownContent: ['Action', 'Another action', 'Something else here'], className1: 'wrap-content-icons-speakers' },
+        {id:1, name: 'Speakers', img: `${Icons.speakers}`, dropdownContent: ['Show Speakers'], className1: 'wrap-content-icons-speakers' },
         {id:2, name: 'Equipment', img: `${Icons.equipment}`, dropdownContent: ['Action', 'Another action', 'Something else here'], className1: 'wrap-content-icons-equipment' },
         {id:3, name: 'Controls', img: `${Icons.controls}`, dropdownContent: ['Action', 'Another action', 'Something else here'], className1: 'wrap-content-icons-controls' },
         {id:4, name: 'Accessories', img: `${Icons.accessories}`, dropdownContent: ['Action', 'Another action', 'Something else here'], className1: 'wrap-content-icons-accessories-1' },
@@ -26,7 +26,7 @@ export function ContentAllIcons() {
             {icons.map((item, index) => {
                 return (
                     <>
-                        <div className='wrap-content-icon'  >
+                        <div key={index} className='wrap-content-icon'  >
                             <div className={` ${item.className1}`}  >
                                 <div className="icons-content icons-size" data-toggle="dropdown" aria-haspopup="true">
 
@@ -43,9 +43,9 @@ export function ContentAllIcons() {
                                 </div>
 
                                 <div className="dropdown-menu dropdown-custom" aria-labelledby="dropdownMenuButton">
-                                    {item.dropdownContent.map((content) => {
+                                    {item.dropdownContent.map((content,index) => {
                                         return (
-                                            <a className="dropdown-item" href={url}>{content}</a>
+                                            <a key={index} className="dropdown-item" href={url}>{content}</a>
                                         );
                                     })}
                                 </div>

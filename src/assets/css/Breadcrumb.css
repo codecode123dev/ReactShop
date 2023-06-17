@@ -1,0 +1,31 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* .breadcrumb-not-active {
+    @apply text-[#cccccc];
+  }
+  
+  .breadcrumb-active {
+    @apply text-[#000000];
+  }
+  
+  .breadcrumb-arrow {
+    @apply ml-[10px] mr-[10px];
+   
+  }
+  .breadcrumb{
+    @apply text-[14px]
+  }
+*/
+.breadcrumbs{
+    @apply text-[14px] flex
+  }
+.breadcrumb-not-active {
+    @apply text-[#cccccc];
+  }
+  
+  .breadcrumb-active {
+    @apply text-[#000000];
+  }
