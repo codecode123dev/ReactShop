@@ -217,8 +217,13 @@ export function FilterBrandAndMemory(props) {
                             <div className="checkbox-technique">
                                 {checkboxTechnique.map((item, index) => {
                                     return (
+<<<<<<< HEAD
                                         <>
                                             <div key={index} className="form-check check-box-technique" >
+=======
+                                        <React.Fragment key={index}>
+                                            <div className="form-check check-box-technique">
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
                                                 <input className="form-check-input"
                                                     type="checkbox"
                                                     checked={selectedTechnique.includes(item.name)}
@@ -229,7 +234,7 @@ export function FilterBrandAndMemory(props) {
                                                 </label>
                                                 <label className="content-item-technique content-iPad font-size-12">{item.number}</label>
                                             </div>
-                                        </>
+                                        </React.Fragment>
                                     )
                                 })}
                             </div>
@@ -245,8 +250,13 @@ export function FilterBrandAndMemory(props) {
                             <div className="checkbox-features">
                                 {checkboxFeatures.map((item, index) => {
                                     return (
+<<<<<<< HEAD
                                         <>
                                             <div key={index} className="form-check check-box-technique">
+=======
+                                        <React.Fragment key={index}>
+                                            <div className="form-check check-box-technique">
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
                                                 <input className="form-check-input" 
                                                 type="checkbox" 
                                                 checked={selectedFeature.includes(item.name)} 
@@ -257,7 +267,7 @@ export function FilterBrandAndMemory(props) {
                                                 </label>
                                                 <label className="content-item-technique content-iPad font-size-12">{item.number}</label>
                                             </div>
-                                        </>
+                                        </React.Fragment>
                                     )
                                 })}
                             </div>
@@ -273,12 +283,17 @@ export function FilterBrandAndMemory(props) {
                             <div className="row-color-one row">
                                 {itemColorsRowOne.map((item, index) => {
                                     return (
+<<<<<<< HEAD
                                         <>
                                         <div key={index} className="color-items col-xl-4">
+=======
+                                        <React.Fragment key={index}>
+                                        <div className="color-items col-xl-4">
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
                                             <span className={`style-color-one ${item.className}`}></span>
                                             <p>{item.name}</p>
                                         </div>
-                                        </>
+                                        </React.Fragment>
                                     )
                                 })}
                             </div>

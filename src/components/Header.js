@@ -6,6 +6,14 @@ import '../assets/css/Header.css';
 import { Link } from "react-router-dom";
 import { AuthButton } from "./Auth/pages";
 // import { FilteredList } from "./FilteredList";
+import Account from "./Account";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useNavigate
+} from 'react-router-dom';
 
 
 
@@ -44,6 +52,17 @@ function ItemsContentHeader() {
 
 export default function Header(props) {
     let url = '#';
+
+    const navigate = useNavigate();
+
+    const handleChangeRouter = (e) =>{
+        e.preventDefault();
+        navigate('/account')
+    }
+
+    const goToHome = () =>{
+        navigate('/')
+    }
     return (
         <>
             <header className="header">

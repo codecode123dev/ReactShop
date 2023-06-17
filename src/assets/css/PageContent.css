@@ -90,3 +90,42 @@ a.cart-item {
     color: blue
 }
 
+.paginationBttns{
+    width: 100%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.paginationBttns a {
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #515299;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.paginationBttns a:hover {
+    color: white;
+    background-color: #6667ad;
+}
+
+
+.paginationBttns a {
+    color: white;
+    background-color: #515293;
+    font-size: 10px;
+}
+
+a.previousBttn {
+    text-decoration: none;
+    font-size: 10px;
+}
+a.nextBttn{
+    text-decoration: none;
+    font-size: 10px;
+}
+li.paginationActive {
+    color: white;
+}

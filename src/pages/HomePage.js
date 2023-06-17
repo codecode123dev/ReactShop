@@ -4,6 +4,7 @@ import PageContent from "../components/PageContent";
 import Footer from "../components/Footer";
 import queryString from "query-string";
 import { OptionMainContent } from "../components/OptionMainContent";
+<<<<<<< HEAD
 // import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
 
@@ -25,6 +26,27 @@ export const itemProduct = [
     { id:13 ,category: 'WATCHES', img: require('../assets/img/laptopSmart.png'), name: 'Smart Watch', description:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',price: '10.00', brand: 'Apple', memory: '32 Gb', technique: 'Media Pad', feature: 'Timer',date: "29-12-2013" },
     { id:14 ,category: 'WATCHES', img: require('../assets/img/SmartWatchPink.png'), name: 'Apple Watch', description:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',price: '30.00', brand: 'Apple', memory: '128 Gb', technique: 'Galaxy Tab S', feature: 'Calorie monitoring',date: "16-12-2013" },
     { id:15 ,category: 'GADGET', img: require('../assets/img/ApplePhone.png'), name: 'Apple iPod', description:'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',price: '70.00', brand: 'Apple', memory: '128 Gb', technique: 'Galaxy Tab A', feature: 'Physical activity' ,date: "14-08-2013"}
+=======
+import { BrowserRouter as Router, Route, Link, NavLink, useRoutes, useNavigate, Routes } from "react-router-dom";
+import Account from "../components/Account";
+
+export const itemProduct = [
+    { category: 'LAPTOPS', img: require('../assets/img/Apple_Mac.png'), name: 'Apple Mac Book Pro', price: '950.00', brand: 'Apple', memory: '16 Gb', technique: 'iPad Pro', feature: 'Calorie monitoring', date: "01-12-2013" },
+    { category: 'TABLETS', img: require('../assets/img/IPad_Pro.png'), name: 'iPad Pro 11', price: '90.00', brand: 'Apple', memory: '256 Gb', technique: 'iPad Pro', feature: 'Sleep Monitoring', date: "11-12-2013" },
+    { category: 'COMPUTERS', img: require('../assets/img/Samsung_Qled.png'), name: 'Samsung Qled 4K', price: '50.00', brand: 'Samsung', memory: '8Gb', technique: 'iPad mini', feature: 'Physical activity', date: "09-12-2013" },
+    { category: 'PHONES', img: require('../assets/img/Samsung_galaxy_s10.png'), name: 'Samsung Galaxy s10', price: '150.00', brand: 'Samsung', memory: '64 Gb', technique: 'Galaxy Tab S', feature: 'Pulse Measurement', date: "08-12-2013" },
+    { category: 'TABLETS', img: require('../assets/img/IpadPro11.png'), name: 'iPad Pro 11', price: '60.00', brand: 'Apple', memory: '32 Gb', technique: 'Galaxy Tab A', feature: 'Stopwatch', date: "14-12-2013" },
+    { category: 'COMPUTERS', img: require('../assets/img/loudspeaker.png'), name: 'Samsung Qled 4K', price: '250.00', brand: 'Samsung', memory: '8Gb', technique: 'Muze', feature: 'Timer', date: "01-04-2013" },
+    { category: 'TABLETS', img: require('../assets/img/Microsoft_surface.png'), name: 'Microsoft Surface Studio', price: '850.00', brand: 'Apple', memory: '128 Gb', technique: 'Media Pad', feature: 'Physical activity', date: "18-07-2013" },
+    { category: 'WATCHES', img: require('../assets/img/Samsung_watch.png'), name: 'Samsung Watch', price: '350.00', brand: 'Samsung', memory: '8Gb', technique: 'iPad mini', feature: 'Pulse Measurement', date: "11-10-2013" },
+    { category: 'COMPUTERS', img: require('../assets/img/ProDisplayXDR.png'), name: 'Pro Display XDR', price: '910.00', brand: 'Apple', memory: '64 Gb', technique: 'iPad Pro', feature: 'Sleep Monitoring', date: "18-12-2013" },
+    { category: 'BLACK FRIDAY', img: require('../assets/img/Gamepad_Xbox_one.png'), name: 'Gamepad Xbox One X', price: '750.00', brand: 'Apple', memory: '32 Gb', technique: 'Muze', feature: 'Physical activity', date: "20-11-2013" },
+    { category: 'WATCHES', img: require('../assets/img/Smart_watch.png'), name: 'Smart Watch', price: '450.00', brand: 'Apple', memory: '32 Gb', technique: 'Media Pad', feature: 'Calorie monitoring', date: "26-12-2013" },
+    { category: 'GADGET', img: require('../assets/img/GoogleNest.png'), name: 'Google Nest', price: '30.00', brand: 'Apple', memory: '16 Gb', technique: 'iPad Pro', feature: 'Sleep Monitoring', date: "27-12-2013" },
+    { category: 'WATCHES', img: require('../assets/img/laptopSmart.png'), name: 'Smart Watch', price: '10.00', brand: 'Apple', memory: '32 Gb', technique: 'Media Pad', feature: 'Timer', date: "29-12-2013" },
+    { category: 'WATCHES', img: require('../assets/img/SmartWatchPink.png'), name: 'Apple Watch', price: '30.00', brand: 'Apple', memory: '128 Gb', technique: 'Galaxy Tab S', feature: 'Calorie monitoring', date: "16-12-2013" },
+    { category: 'GADGET', img: require('../assets/img/ApplePhone.png'), name: 'Apple iPod', price: '70.00', brand: 'Apple', memory: '128 Gb', technique: 'Galaxy Tab A', feature: 'Physical activity', date: "14-08-2013" }
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
 
 
 ];
@@ -37,8 +59,13 @@ export const OPTION_SORT = {
 }
 
 export const OPTION_SORT_ORDER = {
+<<<<<<< HEAD
     ASCENDING : 'ascending',
     DESCENDING : 'descending'
+=======
+    ASCENDING: 'ascending',
+    DESCENDING: 'descending'
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
 }
 
 
@@ -59,7 +86,11 @@ export default function HomePage() {
 
 
     const [search, setSearch] = useState("");
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
     //sort by desc
     const [selectedSort, setSelectedSort] = useState()
     
@@ -85,9 +116,52 @@ export default function HomePage() {
 
 
 
+    const navigate = useNavigate()
+
+    const sortPrice = (e) => {
+
+        // console.log(e.target.value)
+        const options = {
+            "ascending": [...filteredList].sort((a, b) => (a.price < b.price ? -1 : 1)),
+            "descending": [...filteredList].sort((a, b) => (a.price < b.price ? 1 : -1))
+        }
+        sortPrice(options[e.target.value]);
+    }
+
+    //pagination
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(10);
+
+    // useEffect(() => {
+    //     const fetchPosts = async () => {
+    //         setLoading(true)
+    //         setPosts(itemProduct)
+    //         setLoading(false)
+    //     }
+
+    //     fetchPosts()
+    // },[])
+
+
+    // const indexOfLastPost = 
+
+
+
     // const handlePrice = () => {
     //     setSelectedSort(OPTION_SORT.PRICE)
     //     // console.log(setSelectedSort)S
+<<<<<<< HEAD
+=======
+    // }
+
+    // const handlePrice = () => {
+    //     return(
+    //         alert("helo")
+    //     )
+
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
     // }
 
     // Test
@@ -105,7 +179,13 @@ export default function HomePage() {
 
     // end test
 
+<<<<<<< HEAD
     //cho search còn changeRoute Khác bên filterBrandAndMemory
+=======
+
+
+
+>>>>>>> dea8cc2235f8015256b9ac3b0cf60fd0c59d510c
     const changeRoute = (nameCategory, newSelected) => {
         const url = new URL(window.location);
         // const urlName = new URL(window.location);
@@ -237,6 +317,7 @@ export default function HomePage() {
         if (value === selectedSort) {
             setSelectedSort()
             setFilteredList(itemProduct)
+            // navigate('account')
         }
         else {
             setSelectedSort(value)
